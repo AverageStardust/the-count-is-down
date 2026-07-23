@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://wcev8pe0b7q7"]
+
+[ext_resource type="Texture2D" uid="uid://dodr3xm28uy2x" path="res://icon.svg" id="1_ep8l3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u04nx"]
+texture = ExtResource("1_ep8l3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0x6nt"]
+texture = ExtResource("1_ep8l3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gvgps"]
+texture = ExtResource("1_ep8l3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n28y6"]
+texture = ExtResource("1_ep8l3")
+
+[node name="Control" type="Control" unique_id=1823686370]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DeskTexture" type="Panel" parent="." unique_id=1892038893]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_u04nx")
+
+[node name="Desk" type="VBoxContainer" parent="DeskTexture" unique_id=2007512904]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DeskTop" type="HBoxContainer" parent="DeskTexture/Desk" unique_id=762890355]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LeftSpacer" type="Control" parent="DeskTexture/Desk/DeskTop" unique_id=1158176064]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+
+[node name="Original" type="CenterContainer" parent="DeskTexture/Desk/DeskTop" unique_id=2009244856]
+layout_mode = 2
+size_flags_horizontal = 3
+offset_transform_enabled = true
+
+[node name="Panel" type="Panel" parent="DeskTexture/Desk/DeskTop/Original" unique_id=1833478245]
+custom_minimum_size = Vector2(192, 256)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0x6nt")
+
+[node name="Forgery" type="CenterContainer" parent="DeskTexture/Desk/DeskTop" unique_id=681378643]
+layout_mode = 2
+size_flags_horizontal = 3
+offset_transform_enabled = true
+
+[node name="Panel" type="Panel" parent="DeskTexture/Desk/DeskTop/Forgery" unique_id=518769141]
+custom_minimum_size = Vector2(192, 256)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_gvgps")
+
+[node name="RightSpacer" type="Control" parent="DeskTexture/Desk/DeskTop" unique_id=326131261]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+
+[node name="DeskDrawer" type="HBoxContainer" parent="DeskTexture/Desk" unique_id=430679558]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LeftSpacer" type="Control" parent="DeskTexture/Desk/DeskDrawer" unique_id=181018869]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+
+[node name="Letters" type="Control" parent="DeskTexture/Desk/DeskDrawer" unique_id=749791115]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="DeskTexture/Desk/DeskDrawer/Letters" unique_id=2103285689]
+custom_minimum_size = Vector2(256, 192)
+layout_mode = 0
+offset_left = 15.0
+offset_top = 73.0
+offset_right = 271.0
+offset_bottom = 265.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_n28y6")
+
+[node name="Panel2" type="Panel" parent="DeskTexture/Desk/DeskDrawer/Letters" unique_id=1719849512]
+custom_minimum_size = Vector2(256, 192)
+layout_mode = 0
+offset_left = 298.0
+offset_top = 43.0
+offset_right = 554.0
+offset_bottom = 235.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_n28y6")
+
+[node name="Panel3" type="Panel" parent="DeskTexture/Desk/DeskDrawer/Letters" unique_id=14409851]
+custom_minimum_size = Vector2(256, 192)
+layout_mode = 0
+offset_left = 312.0
+offset_top = 71.0
+offset_right = 568.0
+offset_bottom = 263.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_n28y6")
+
+[node name="Panel4" type="Panel" parent="DeskTexture/Desk/DeskDrawer/Letters" unique_id=1969048903]
+custom_minimum_size = Vector2(256, 192)
+layout_mode = 0
+offset_left = 312.0
+offset_top = 94.0
+offset_right = 568.0
+offset_bottom = 286.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_n28y6")
+
+[node name="RightSpacer" type="Control" parent="DeskTexture/Desk/DeskDrawer" unique_id=696296939]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
