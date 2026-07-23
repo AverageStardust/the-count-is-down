@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://wcev8pe0b7q7"]
 
 [ext_resource type="Texture2D" uid="uid://dodr3xm28uy2x" path="res://icon.svg" id="1_ep8l3"]
+[ext_resource type="Texture2D" uid="uid://dfm7exiyw4iie" path="res://art/desk.png" id="1_t5y75"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u04nx"]
-texture = ExtResource("1_ep8l3")
+texture = ExtResource("1_t5y75")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0x6nt"]
 texture = ExtResource("1_ep8l3")
@@ -18,6 +19,7 @@ texture = ExtResource("1_ep8l3")
 layout_mode = 3
 anchor_right = 1.0
 anchor_bottom = 2.0
+offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
 

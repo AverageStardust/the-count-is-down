@@ -2,6 +2,13 @@
 ### Godot generated files ###
 #############################
 
+# Godot 4.2+ specific ignores
+~*.dll
+
+# Godot 4+ specific ignores
+.godot/
+.nomedia
+
 # Buildsystem
 bin
 *.gen.*
