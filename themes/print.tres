@@ -1,0 +1,35 @@
+[gd_resource type="Theme" format=3 uid="uid://canmh3500dx24"]
+
+[ext_resource type="FontFile" uid="uid://yg0yk77rhxv8" path="res://art/bandywoodNeo.ttf" id="1_0tfap"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u04nx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0x6nt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_33gkk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o2pu8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j7rfw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jxcoe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lfnlm"]
+
+[resource]
+LineEdit/colors/font_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_uneditable_color = Color(0, 0, 0, 1)
+LineEdit/font_sizes/font_size = 15
+LineEdit/fonts/font = ExtResource("1_0tfap")
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_u04nx")
+LineEdit/styles/normal = SubResource("StyleBoxEmpty_0x6nt")
+LineEdit/styles/read_only = SubResource("StyleBoxEmpty_33gkk")
+TextEdit/colors/background_color = Color(0, 0, 0, 0)
+TextEdit/colors/font_color = Color(0, 0, 0, 1)
+TextEdit/constants/line_spacing = 1
+TextEdit/font_sizes/font_size = 15
+TextEdit/fonts/font = ExtResource("1_0tfap")
+TextEdit/styles/focus = SubResource("StyleBoxEmpty_o2pu8")
+TextEdit/styles/normal = SubResource("StyleBoxEmpty_j7rfw")
+TextEdit/styles/read_only = SubResource("StyleBoxEmpty_jxcoe")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_lfnlm")
