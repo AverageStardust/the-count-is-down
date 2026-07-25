@@ -41,7 +41,7 @@ func Rel_Pos():
 	var similar = []
 	similar.resize(n-1)
 	for i in range(n-1,0,-1):
-		if (lev_mat[i*m + j] < prev): 
+		if (lev_mat[i*m + j] < prev or lev_mat[i*m + j] == lev_mat[i*m + j-1]): 
 			similar[i-1] = j-1
 		prev = lev_mat[i*m + j]
 		while lev_mat[i*m + j-1] < prev:
