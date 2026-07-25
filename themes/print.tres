@@ -20,8 +20,8 @@ bg_color = Color(0, 0, 0, 0.047058824)
 
 [resource]
 LineEdit/colors/caret_color = Color(0, 0, 0, 1)
-LineEdit/colors/font_color = Color(0.09773984, 0.087633066, 0.02873019, 1)
-LineEdit/colors/font_uneditable_color = Color(0.09803922, 0.08627451, 0.02745098, 1)
+LineEdit/colors/font_color = Color(0.09803922, 0.08627451, 0.02745098, 0.8627451)
+LineEdit/colors/font_uneditable_color = Color(0.09803922, 0.08627451, 0.02745098, 0.8627451)
 LineEdit/font_sizes/font_size = 15
 LineEdit/fonts/font = ExtResource("1_0tfap")
 LineEdit/styles/focus = SubResource("StyleBoxFlat_se7ci")
@@ -29,8 +29,8 @@ LineEdit/styles/normal = SubResource("StyleBoxEmpty_0x6nt")
 LineEdit/styles/read_only = SubResource("StyleBoxEmpty_33gkk")
 TextEdit/colors/background_color = Color(0, 0, 0, 0)
 TextEdit/colors/caret_color = Color(0, 0, 0, 1)
-TextEdit/colors/font_color = Color(0.09803922, 0.08627451, 0.02745098, 1)
-TextEdit/colors/font_readonly_color = Color(0.09803922, 0.08627451, 0.02745098, 1)
+TextEdit/colors/font_color = Color(0.09803922, 0.08627451, 0.02745098, 0.8627451)
+TextEdit/colors/font_readonly_color = Color(0.09803922, 0.08627451, 0.02745098, 0.8627451)
 TextEdit/constants/line_spacing = 1
 TextEdit/font_sizes/font_size = 15
 TextEdit/fonts/font = ExtResource("1_0tfap")
