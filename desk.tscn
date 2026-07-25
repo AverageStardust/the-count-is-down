@@ -2,15 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://dodr3xm28uy2x" path="res://icon.svg" id="1_ep8l3"]
 [ext_resource type="Texture2D" uid="uid://dfm7exiyw4iie" path="res://art/desk.png" id="1_t5y75"]
+[ext_resource type="PackedScene" uid="uid://dratlcpbp1wpr" path="res://documents/newspaperClipping.tscn" id="2_se7ci"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u04nx"]
 texture = ExtResource("1_t5y75")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0x6nt"]
-texture = ExtResource("1_ep8l3")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gvgps"]
-texture = ExtResource("1_ep8l3")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n28y6"]
 texture = ExtResource("1_ep8l3")
@@ -37,15 +32,18 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="DeskTop" type="HBoxContainer" parent="DeskTexture/Desk" unique_id=762890355]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = 0
 
 [node name="LeftSpacer" type="Control" parent="DeskTexture/Desk/DeskTop" unique_id=1158176064]
-custom_minimum_size = Vector2(32, 0)
+custom_minimum_size = Vector2(16, 0)
 layout_mode = 2
 
 [node name="Original" type="CenterContainer" parent="DeskTexture/Desk/DeskTop" unique_id=2009244856]
@@ -53,31 +51,28 @@ layout_mode = 2
 size_flags_horizontal = 3
 offset_transform_enabled = true
 
-[node name="Panel" type="Panel" parent="DeskTexture/Desk/DeskTop/Original" unique_id=1833478245]
-custom_minimum_size = Vector2(192, 256)
+[node name="NewsPaperClipping" parent="DeskTexture/Desk/DeskTop/Original" unique_id=1500786714 instance=ExtResource("2_se7ci")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_0x6nt")
 
 [node name="Forgery" type="CenterContainer" parent="DeskTexture/Desk/DeskTop" unique_id=681378643]
 layout_mode = 2
 size_flags_horizontal = 3
 offset_transform_enabled = true
 
-[node name="Panel" type="Panel" parent="DeskTexture/Desk/DeskTop/Forgery" unique_id=518769141]
-custom_minimum_size = Vector2(192, 256)
+[node name="NewsPaperClipping" parent="DeskTexture/Desk/DeskTop/Forgery" unique_id=2017303177 instance=ExtResource("2_se7ci")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_gvgps")
 
 [node name="RightSpacer" type="Control" parent="DeskTexture/Desk/DeskTop" unique_id=326131261]
-custom_minimum_size = Vector2(32, 0)
+custom_minimum_size = Vector2(16, 0)
 layout_mode = 2
 
 [node name="DeskDrawer" type="HBoxContainer" parent="DeskTexture/Desk" unique_id=430679558]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = 0
 
 [node name="LeftSpacer" type="Control" parent="DeskTexture/Desk/DeskDrawer" unique_id=181018869]
-custom_minimum_size = Vector2(32, 0)
+custom_minimum_size = Vector2(16, 0)
 layout_mode = 2
 
 [node name="Letters" type="Control" parent="DeskTexture/Desk/DeskDrawer" unique_id=749791115]
@@ -121,5 +116,5 @@ offset_bottom = 286.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_n28y6")
 
 [node name="RightSpacer" type="Control" parent="DeskTexture/Desk/DeskDrawer" unique_id=696296939]
-custom_minimum_size = Vector2(32, 0)
+custom_minimum_size = Vector2(16, 0)
 layout_mode = 2
