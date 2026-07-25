@@ -7,6 +7,9 @@ script = ExtResource("1_o11yq")
 text = Dictionary[int, PackedStringArray]({
 0: PackedStringArray("Dracula Gone At Last", "Dracula Disappeared"),
 1: PackedStringArray("Transylvania Times"),
-2: PackedStringArray("Sighting of Dracula in Transylvania have been on the decline. In other news, sheep polulations in the area are at historic highs.")
+2: PackedStringArray("Sighting of Dracula in Transylvania have been on the decline. In other news, sheep polulations in the area are at historic highs."),
+3: PackedStringArray("Grave dirt"),
+4: PackedStringArray("207 Strada Liliecilor, Bran, Romania"),
+5: PackedStringArray("109 Dartmouth Road, London, UK")
 })
 metadata/_custom_type_script = "uid://b2aeo60ghf1tl"
