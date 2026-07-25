@@ -1,13 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://ct0r2o3h378ai"]
 
-[ext_resource type="FontFile" uid="uid://r5gyodi8bgg5" path="res://art/vanHelsing.ttf" id="1_n6cft"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oxcfv"]
-bg_color = Color(0, 0, 0, 0.047058824)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0x6nt"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_33gkk"]
+[ext_resource type="FontFile" uid="uid://bse4im0wxolfc" path="res://art/vanHelsing.ttf" id="1_n6cft"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tfap"]
 bg_color = Color(0, 0, 0, 0.047058824)
@@ -19,14 +12,6 @@ bg_color = Color(0, 0, 0, 0.047058824)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oxcfv"]
 
 [resource]
-LineEdit/colors/caret_color = Color(0.15294118, 0.14901961, 0.21960784, 1)
-LineEdit/colors/font_color = Color(0.15294118, 0.14901961, 0.21960784, 0.8627451)
-LineEdit/colors/font_uneditable_color = Color(0.15294118, 0.14901961, 0.21960784, 0.8627451)
-LineEdit/font_sizes/font_size = 15
-LineEdit/fonts/font = ExtResource("1_n6cft")
-LineEdit/styles/focus = SubResource("StyleBoxFlat_oxcfv")
-LineEdit/styles/normal = SubResource("StyleBoxEmpty_0x6nt")
-LineEdit/styles/read_only = SubResource("StyleBoxEmpty_33gkk")
 TextEdit/colors/background_color = Color(0, 0, 0, 0)
 TextEdit/colors/caret_color = Color(0.15294118, 0.14901961, 0.21960784, 1)
 TextEdit/colors/font_color = Color(0.15294118, 0.14901961, 0.21960784, 0.8627451)
