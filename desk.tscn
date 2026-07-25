@@ -53,6 +53,7 @@ offset_transform_enabled = true
 
 [node name="NewsPaperClipping" parent="DeskTexture/Desk/DeskTop/Original" unique_id=1500786714 instance=ExtResource("2_se7ci")]
 layout_mode = 2
+editable = false
 
 [node name="Forgery" type="CenterContainer" parent="DeskTexture/Desk/DeskTop" unique_id=681378643]
 layout_mode = 2

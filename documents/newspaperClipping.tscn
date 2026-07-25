@@ -10,6 +10,7 @@ bg_color = Color(0.9411765, 0.9411765, 0.8627451, 1)
 custom_minimum_size = Vector2(300, 160)
 offset_right = 256.0
 offset_bottom = 160.0
+theme = ExtResource("2_v4hx1")
 theme_override_styles/panel = SubResource("StyleBoxFlat_gvgps")
 script = ExtResource("1_r8a8a")
 
@@ -19,7 +20,6 @@ offset_left = 6.0
 offset_top = 6.0
 offset_right = 294.0
 offset_bottom = 38.0
-theme = ExtResource("2_v4hx1")
 theme_override_font_sizes/font_size = 30
 text = "Title"
 
@@ -29,7 +29,6 @@ offset_left = 54.0
 offset_top = 38.0
 offset_right = 246.0
 offset_bottom = 54.0
-theme = ExtResource("2_v4hx1")
 text = "Publisher"
 alignment = 1
 
