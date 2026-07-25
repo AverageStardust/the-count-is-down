@@ -1,3 +1,4 @@
+@abstract
 extends Panel
 class_name Document
 
@@ -53,11 +54,11 @@ func _gui_input(event):
 func discard():
 	velocity = Vector2.from_angle(randf_range(-PI * 0.25, -PI * 0.75)) * 600
 
-func write_content() -> void:
-	pass # abstract
+@abstract
+func write_content() -> void
+	
+@abstract
+func get_fields() -> Array[DocumentField]
 
-func get_fields() -> Array[DocumentField]:
-	return [] # abstract
-
-func set_editable(set_editable: bool) -> void:
-	pass # abstract
+@abstract
+func set_editable(_editable: bool) -> void

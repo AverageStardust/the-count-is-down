@@ -20,7 +20,7 @@ var state: State = State.READING_LETTERS
 func _ready() -> void:
 	pass
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	match(state):
 		State.READING_LETTERS:
 			transition_to_forging()
@@ -49,6 +49,9 @@ func transition_to_forging():
 	state = State.FORGING_DOCUMENTS
 	
 	await forgeryDocument.discarded
+	
+	var advice = Grader.get_advice(originalDocument.get_fields(), forgeryDocument.get_fields())
+	print(advice)
 	
 	originalDocument.discard()
 	await originalDocument.discarded

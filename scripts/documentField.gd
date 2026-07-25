@@ -10,9 +10,9 @@ enum FieldType {
 	ENGLAND_ADDRESS
 }
 
-var content: String
+var text: String
 var type: FieldType
 
 func _init(_content: String, _type: FieldType) -> void:
-	content = _content
+	text = _content
 	type = _type

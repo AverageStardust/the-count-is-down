@@ -1,8 +1,52 @@
 extends Node
 
+var rules: Array[GraderRule] = [ReplaceDraculaRule.new()]
+
 var lev_mat = []
 var m
 var n
+
+func get_advice(original: Array[DocumentField], forgery: Array[DocumentField]) -> String:
+	var original_length: int = 0
+	var forgery_length: int = 0
+	var goal_score: float = 0
+	var worst_rule_score: float = 0
+	var worst_rule = rules[0]
+		
+	for i in original.size():
+		original_length += original[i].text.length()
+		forgery_length += forgery[i].text.length()
+		goal_score += goal_dist(original[i], forgery[i])
+		
+		lev_dist(forgery[i].text, original[i].text)
+		var relative_positions = rel_pos()
+		
+		for rule in rules:
+			var rule_score = rule.relative_edit_score(original[i], forgery[i], relative_positions)
+			
+			if rule_score > worst_rule_score:
+				worst_rule_score = rule_score
+				worst_rule = rule
+	
+	goal_score /= float(original_length)
+	
+	if worst_rule_score > 0.4:
+		if goal_score + 0.1 > worst_rule_score:
+			if forgery_length < original_length * 0.6:
+				return "You must have missed copying something, this is too empty."
+			else:
+				return "You've made too many changes unnecessary, it just looks fake."
+		else:
+			return worst_rule.get_advice()
+	else:
+		return ""
+		
+
+func goal_dist(original_field: DocumentField,forgery_field: DocumentField) -> int:
+	for rule in rules:
+		original_field = rule.apply_edits(original_field)
+	
+	return lev_dist(forgery_field.text, original_field.text)
 
 ## Creates levenshtein matrix and returns levenshtein distance
 func lev_dist(input: String, target: String) -> int: 
