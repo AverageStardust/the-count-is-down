@@ -19,18 +19,18 @@ bg_color = Color(0, 0, 0, 0.047058824)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oxcfv"]
 
 [resource]
-LineEdit/colors/caret_color = Color(0, 0, 0, 1)
-LineEdit/colors/font_color = Color(0.08235294, 0.078431375, 0.12941177, 0.78431374)
-LineEdit/colors/font_uneditable_color = Color(0.08235294, 0.078431375, 0.12941177, 0.78431374)
+LineEdit/colors/caret_color = Color(0.15294118, 0.14901961, 0.21960784, 1)
+LineEdit/colors/font_color = Color(0.15294118, 0.14901961, 0.21960784, 0.8627451)
+LineEdit/colors/font_uneditable_color = Color(0.15294118, 0.14901961, 0.21960784, 0.8627451)
 LineEdit/font_sizes/font_size = 15
 LineEdit/fonts/font = ExtResource("1_n6cft")
 LineEdit/styles/focus = SubResource("StyleBoxFlat_oxcfv")
 LineEdit/styles/normal = SubResource("StyleBoxEmpty_0x6nt")
 LineEdit/styles/read_only = SubResource("StyleBoxEmpty_33gkk")
 TextEdit/colors/background_color = Color(0, 0, 0, 0)
-TextEdit/colors/caret_color = Color(0, 0, 0, 1)
-TextEdit/colors/font_color = Color(0.08235294, 0.078431375, 0.12941177, 0.78431374)
-TextEdit/colors/font_readonly_color = Color(0.08235294, 0.078431375, 0.12941177, 0.78431374)
+TextEdit/colors/caret_color = Color(0.15294118, 0.14901961, 0.21960784, 1)
+TextEdit/colors/font_color = Color(0.15294118, 0.14901961, 0.21960784, 0.8627451)
+TextEdit/colors/font_readonly_color = Color(0.15294118, 0.14901961, 0.21960784, 0.8627451)
 TextEdit/constants/line_spacing = 1
 TextEdit/font_sizes/font_size = 15
 TextEdit/fonts/font = ExtResource("1_n6cft")

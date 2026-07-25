@@ -8,9 +8,9 @@ class_name NewspaperClipping
 @export var editable = true: set = set_editable
 
 func _ready() -> void:
-	title.text = DocumentField.random_content(DocumentField.FieldType.NEWSPAPER_TITLE)
-	publisher.text = DocumentField.random_content(DocumentField.FieldType.NEWSPAPER_PUBLISHER)
-	body.text = DocumentField.random_content(DocumentField.FieldType.NEWSPAPER_BODY)
+	title.text = Writer.random_content(DocumentField.FieldType.NEWSPAPER_TITLE)
+	publisher.text = Writer.random_content(DocumentField.FieldType.NEWSPAPER_PUBLISHER)
+	body.text = Writer.random_content(DocumentField.FieldType.NEWSPAPER_BODY)
 	
 	set_editable(editable)
 
