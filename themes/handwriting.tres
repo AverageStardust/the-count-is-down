@@ -2,13 +2,15 @@
 
 [ext_resource type="FontFile" uid="uid://r5gyodi8bgg5" path="res://art/vanHelsing.ttf" id="1_n6cft"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u04nx"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oxcfv"]
+bg_color = Color(0, 0, 0, 0.047058824)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0x6nt"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_33gkk"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o2pu8"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tfap"]
+bg_color = Color(0, 0, 0, 0.047058824)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j7rfw"]
 
@@ -17,19 +19,22 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oxcfv"]
 
 [resource]
-LineEdit/colors/font_color = Color(0, 0, 0, 1)
-LineEdit/colors/font_uneditable_color = Color(0, 0, 0, 1)
+LineEdit/colors/caret_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_color = Color(0.08235294, 0.078431375, 0.12941177, 0.78431374)
+LineEdit/colors/font_uneditable_color = Color(0.08235294, 0.078431375, 0.12941177, 0.78431374)
 LineEdit/font_sizes/font_size = 15
 LineEdit/fonts/font = ExtResource("1_n6cft")
-LineEdit/styles/focus = SubResource("StyleBoxEmpty_u04nx")
+LineEdit/styles/focus = SubResource("StyleBoxFlat_oxcfv")
 LineEdit/styles/normal = SubResource("StyleBoxEmpty_0x6nt")
 LineEdit/styles/read_only = SubResource("StyleBoxEmpty_33gkk")
 TextEdit/colors/background_color = Color(0, 0, 0, 0)
-TextEdit/colors/font_color = Color(0, 0, 0, 1)
+TextEdit/colors/caret_color = Color(0, 0, 0, 1)
+TextEdit/colors/font_color = Color(0.08235294, 0.078431375, 0.12941177, 0.78431374)
+TextEdit/colors/font_readonly_color = Color(0.08235294, 0.078431375, 0.12941177, 0.78431374)
 TextEdit/constants/line_spacing = 1
 TextEdit/font_sizes/font_size = 15
 TextEdit/fonts/font = ExtResource("1_n6cft")
-TextEdit/styles/focus = SubResource("StyleBoxEmpty_o2pu8")
+TextEdit/styles/focus = SubResource("StyleBoxFlat_0tfap")
 TextEdit/styles/normal = SubResource("StyleBoxEmpty_j7rfw")
 TextEdit/styles/read_only = SubResource("StyleBoxEmpty_jxcoe")
 VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_oxcfv")

@@ -1,16 +1,22 @@
 [gd_scene format=3 uid="uid://dratlcpbp1wpr"]
 
 [ext_resource type="Script" uid="uid://b1memdp67e4uw" path="res://scripts/newspaperClipping.gd" id="1_r8a8a"]
+[ext_resource type="Texture2D" uid="uid://cr2glol0b3cje" path="res://art/newspaper.png" id="2_hwux0"]
 [ext_resource type="Theme" uid="uid://canmh3500dx24" path="res://themes/print.tres" id="2_v4hx1"]
+[ext_resource type="Texture2D" uid="uid://bewswi7fdpqt5" path="res://art/newspaperOverlay.png" id="4_c76nq"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvgps"]
-bg_color = Color(0.9411765, 0.9411765, 0.8627451, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r8a8a"]
+texture = ExtResource("2_hwux0")
 
-[node name="NewsPaperClipping" type="Panel" unique_id=1500786714]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gvgps"]
+texture = ExtResource("4_c76nq")
+
+[node name="NewspaperClipping" type="Panel" unique_id=1500786714]
 custom_minimum_size = Vector2(300, 160)
 offset_right = 256.0
 offset_bottom = 160.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_gvgps")
+theme = ExtResource("2_v4hx1")
+theme_override_styles/panel = SubResource("StyleBoxTexture_r8a8a")
 script = ExtResource("1_r8a8a")
 
 [node name="Title" type="LineEdit" parent="." unique_id=217651719]
@@ -19,7 +25,6 @@ offset_left = 6.0
 offset_top = 6.0
 offset_right = 294.0
 offset_bottom = 38.0
-theme = ExtResource("2_v4hx1")
 theme_override_font_sizes/font_size = 30
 text = "Title"
 
@@ -29,7 +34,6 @@ offset_left = 54.0
 offset_top = 38.0
 offset_right = 246.0
 offset_bottom = 54.0
-theme = ExtResource("2_v4hx1")
 text = "Publisher"
 alignment = 1
 
@@ -43,3 +47,13 @@ theme = ExtResource("2_v4hx1")
 text = "Body"
 wrap_mode = 1
 autowrap_mode = 2
+
+[node name="Overplay" type="Panel" parent="." unique_id=1495457993]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_gvgps")
