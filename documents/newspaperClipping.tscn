@@ -25,9 +25,15 @@ offset_left = 6.0
 offset_top = 6.0
 offset_right = 294.0
 offset_bottom = 38.0
+mouse_filter = 1
 theme_override_font_sizes/font_size = 30
-text = "Title"
 alignment = 1
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
 
 [node name="Publisher" type="LineEdit" parent="." unique_id=398996871]
 layout_mode = 0
@@ -35,8 +41,14 @@ offset_left = 70.0
 offset_top = 38.0
 offset_right = 230.0
 offset_bottom = 54.0
-text = "Publisher"
+mouse_filter = 1
 alignment = 1
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
 
 [node name="Body" type="TextEdit" parent="." unique_id=973700025]
 layout_mode = 0
@@ -44,7 +56,14 @@ offset_left = 8.0
 offset_top = 60.0
 offset_right = 292.0
 offset_bottom = 156.0
-text = "Body"
+mouse_filter = 1
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+middle_mouse_paste_enabled = false
+empty_selection_clipboard_enabled = false
 wrap_mode = 1
 autowrap_mode = 2
 
