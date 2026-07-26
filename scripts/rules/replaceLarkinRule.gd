@@ -14,7 +14,7 @@ func find_edits(field: DocumentField) -> Array[RuleEdit]:
 		if index == -1:
 			break
 		else:
-			edits.append(RuleEdit.new(index, index + 8, "Hank"))
+			edits.append(RuleEdit.new(index, index + 8, "P Walter"))
 			index += 8
 	
 	return edits
