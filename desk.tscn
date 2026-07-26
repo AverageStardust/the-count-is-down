@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dodr3xm28uy2x" path="res://icon.svg" id="1_ep8l3"]
 [ext_resource type="Script" uid="uid://omd48a3o3ann" path="res://scripts/desk.gd" id="1_se7ci"]
 [ext_resource type="Texture2D" uid="uid://dfm7exiyw4iie" path="res://art/desk.png" id="1_t5y75"]
+[ext_resource type="PackedScene" uid="uid://b0nlbd703kn6l" path="res://watch.tscn" id="3_vf3xh"]
 [ext_resource type="AudioStream" uid="uid://b2jy3oy8fyns5" path="res://resources/audio/ScaryMusic.wav" id="4_lrwc4"]
 [ext_resource type="Script" uid="uid://g0l5b5q0a4k2" path="res://scripts/musicPlayer.gd" id="4_tm3w8"]
 [ext_resource type="AudioStream" uid="uid://c0l6xg6xhw71r" path="res://resources/audio/writingSounds.wav" id="5_r8wvv"]
@@ -47,6 +48,9 @@ theme_override_constants/separation = 0
 [node name="LeftSpacer" type="Control" parent="Desk/DeskTop" unique_id=1158176064]
 custom_minimum_size = Vector2(16, 0)
 layout_mode = 2
+
+[node name="Watch" parent="Desk/DeskTop/LeftSpacer" unique_id=661106865 instance=ExtResource("3_vf3xh")]
+position = Vector2(32, 32)
 
 [node name="OriginalSlot" type="Control" parent="Desk/DeskTop" unique_id=842438349]
 layout_mode = 2
