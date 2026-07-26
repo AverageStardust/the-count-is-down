@@ -9,6 +9,7 @@ var TELEGRAM = preload("res://documents/telegram.tscn")
 
 @onready var originalSlot: Control = $Desk/DeskTop/OriginalSlot
 @onready var forgerySlot: Control = $Desk/DeskTop/ForgerySlot
+@onready var watch: Watch = $Desk/DeskTop/LeftSpacer/Watch
 
 enum State {
 	READING_LETTERS,
@@ -18,6 +19,7 @@ enum State {
 }
 
 var state: State = State.READING_LETTERS
+var open_documents = []
 var on_letters_screen: bool = true
 var switch_screen_cooldown: float = 0.2
 
@@ -42,11 +44,11 @@ func _process(delta: float) -> void:
 	match state:
 		State.READING_LETTERS:
 			if on_letters_screen == false:
+				watch.set_time(120)
+				watch.time_finished.connect(transition_to_end)
 				transition_to_forging()
-		State.FORGING_DOCUMENTS, State.RECEIVING_CRITICISM:
+		State.FORGING_DOCUMENTS, State.RECEIVING_CRITICISM, State.REACHED_ENDING:
 			pass # nothing
-		State.REACHED_ENDING:
-			pass # todo
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -75,8 +77,10 @@ func transition_to_forging():
 	forgerySlot.add_child(forgeryDocument)
 	
 	state = State.FORGING_DOCUMENTS
+	open_documents = [originalDocument, forgeryDocument]
 	
 	await forgeryDocument.discarded
+	open_documents = [forgeryDocument]
 	
 	var advice = Grader.get_advice(
 		originalDocument.get_fields(), 
@@ -84,6 +88,10 @@ func transition_to_forging():
 	originalDocument.discard()
 	
 	await originalDocument.discarded
+	open_documents = []
+	
+	if state == State.REACHED_ENDING:
+		return
 	
 	if !advice.is_empty():
 		transition_to_criticism(advice)
@@ -97,10 +105,26 @@ func transition_to_criticism(advice: String):
 	criticismTelegram.write_message("Marishka", advice + " -Aleera")
 	
 	state = State.RECEIVING_CRITICISM
+	open_documents = [criticismTelegram]
 	
 	await criticismTelegram.discarded
+	open_documents = []
+	
+	if state == State.REACHED_ENDING:
+		return
 	
 	transition_to_forging()
+
+func transition_to_end():
+	state = State.REACHED_ENDING
+	
+	for document in open_documents:
+		document.discard()
+	
+	open_documents = []
+	
+	on_letters_screen = true
+	switch_screen_cooldown = INF
 
 func next_document_type() -> PackedScene:
 	match randi_range(0, 2):
