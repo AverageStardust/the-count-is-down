@@ -1,5 +1,8 @@
 extends Control
 
+const LETTER_SCENE_POSITION = 340
+const SCENE_SWITCH_RANGE = 12
+
 var NEWSPAPER_CLIPPING = preload("res://documents/newspaperClipping.tscn")
 var PACKAGE_LABEL = preload("res://documents/packageLabel.tscn")
 var TELEGRAM = preload("res://documents/telegram.tscn")
@@ -15,10 +18,49 @@ enum State {
 }
 
 var state: State = State.READING_LETTERS
+var on_letters_screen: bool = true
+var switch_screen_cooldown: float = 0.2
 
 func _ready() -> void:
 	await get_tree().process_frame
-	transition_to_forging()
+	
+	if on_letters_screen:
+		position.y = -LETTER_SCENE_POSITION
+	else:
+		position.y = 0
+
+func _process(delta: float) -> void:
+	var target_y: float = 0
+	if on_letters_screen:
+		target_y = -LETTER_SCENE_POSITION
+	
+	position.y = lerp(position.y, target_y, delta * 3.0)
+	position.y = move_toward(position.y, target_y, delta * 45.0)
+	
+	switch_screen_cooldown = max(0, switch_screen_cooldown - delta)
+	
+	match state:
+		State.READING_LETTERS:
+			if on_letters_screen == false:
+				transition_to_forging()
+		State.FORGING_DOCUMENTS, State.RECEIVING_CRITICISM:
+			pass # nothing
+		State.REACHED_ENDING:
+			pass # todo
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		var window_height = get_viewport().get_visible_rect().size.y
+		if event.position.y < SCENE_SWITCH_RANGE:
+			if switch_screen_cooldown <= 0:
+				on_letters_screen = false
+			
+			switch_screen_cooldown = 0.05
+		elif event.position.y > window_height - SCENE_SWITCH_RANGE:
+			if switch_screen_cooldown <= 0:
+				on_letters_screen = true
+			
+			switch_screen_cooldown = 0.05
 
 func transition_to_forging():
 	var document_type: PackedScene = next_document_type()
