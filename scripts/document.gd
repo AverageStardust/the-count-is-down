@@ -5,6 +5,7 @@ class_name Document
 signal discarded
 
 @export var editable = true: set = set_editable
+@export var draggable = true
 
 var velocity: Vector2
 var origin_position: Vector2
@@ -46,7 +47,7 @@ func move_to_edge(delta: float):
 	position = position.lerp(position * 2 - origin_position, delta * 2.5)
 
 func _gui_input(event):
-	if editable && event is InputEventMouseMotion:
+	if draggable && event is InputEventMouseMotion:
 		if event.button_mask & 1:
 			position += event.relative
 			accept_event()

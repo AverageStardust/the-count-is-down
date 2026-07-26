@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dratlcpbp1wpr"]
 
-[ext_resource type="Script" uid="uid://b1memdp67e4uw" path="res://scripts/newspaperClipping.gd" id="1_r8a8a"]
+[ext_resource type="Script" uid="uid://b1memdp67e4uw" path="res://scripts/documents/newspaperClipping.gd" id="1_r8a8a"]
 [ext_resource type="Texture2D" uid="uid://cr2glol0b3cje" path="res://art/newspaper.png" id="2_hwux0"]
 [ext_resource type="Theme" uid="uid://canmh3500dx24" path="res://themes/print.tres" id="2_v4hx1"]
 [ext_resource type="Texture2D" uid="uid://bewswi7fdpqt5" path="res://art/newspaperOverlay.png" id="4_c76nq"]

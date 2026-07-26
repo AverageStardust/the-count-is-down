@@ -2,7 +2,7 @@ extends GraderRule
 class_name ReplaceDraculaRule
 
 func get_advice() -> String:
-	return "It seems like something about Dracula got out, make sure to replace his name with Hank"
+	return "You let Dracula's name get out, remember, it's \"Hank\""
 
 func find_edits(field: DocumentField) -> Array[RuleEdit]:
 	var edits: Array[RuleEdit] = []

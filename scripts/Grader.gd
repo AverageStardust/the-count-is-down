@@ -7,19 +7,23 @@ var m
 var n
 
 func get_advice(original: Array[DocumentField], forgery: Array[DocumentField]) -> String:
-	var original_length: int = 0
-	var forgery_length: int = 0
-	var goal_score: float = 0
+	var worst_accuracy_score: float = 0
+	var worst_length_score: float = 0
 	var worst_rule_score: float = 0
 	var worst_rule = rules[0]
 		
 	for i in original.size():
-		original_length += original[i].text.length()
-		forgery_length += forgery[i].text.length()
-		goal_score += goal_dist(original[i], forgery[i])
-		
+		var original_length: int = original[i].text.length()
+		var goal_dist: int = goal_dist(original[i], forgery[i])
+		var accuracy_score =  float(goal_dist) / float(original_length)
+		worst_accuracy_score = max(worst_accuracy_score, accuracy_score)
+			
+		var forgery_length: int = forgery[i].text.length()
+		var length_score = abs(original_length - forgery_length) / original_length
+		worst_length_score = max(worst_length_score, length_score)
+			
 		lev_dist(forgery[i].text, original[i].text)
-		var relative_positions = rel_pos()
+		var relative_positions: Array[int] = rel_pos()
 		
 		for rule in rules:
 			var rule_score = rule.relative_edit_score(original[i], forgery[i], relative_positions)
@@ -28,16 +32,13 @@ func get_advice(original: Array[DocumentField], forgery: Array[DocumentField]) -
 				worst_rule_score = rule_score
 				worst_rule = rule
 	
-	goal_score /= float(original_length)
-	
-	if worst_rule_score > 0.4:
-		if goal_score + 0.1 > worst_rule_score:
-			if forgery_length < original_length * 0.6:
-				return "You must have missed copying something, this is too empty."
-			else:
-				return "You've made too many changes unnecessary, it just looks fake."
-		else:
+	if worst_accuracy_score > 0.35:
+		if worst_length_score > 0.2:
+			return "You missed copying something, the last forgery looks too empty."
+		elif worst_rule_score > worst_accuracy_score + 0.1:
 			return worst_rule.get_advice()
+		else:
+			return "You made unnecessary changes, the last forgery looks fake."
 	else:
 		return ""
 		
@@ -86,7 +87,7 @@ func rel_pos() -> Array[int]:
 	var j = m-1
 	var prev = lev_mat[n*m-1]+1
 	var similar: Array[int]
-	similar.resize(n-1)
+	similar.resize(n)
 	
 	if j == 0:
 		similar.fill(0)
@@ -101,5 +102,7 @@ func rel_pos() -> Array[int]:
 			j -= 1
 			similar[i - 1] = j - 1
 			prev = lev_mat[i*m + j]
+	
+	similar[n - 1] = similar[n - 2] + 1
 	
 	return similar

@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://twdtmhgj8iuk"]
+
+[ext_resource type="Theme" uid="uid://ct0r2o3h378ai" path="res://themes/handwriting.tres" id="1_a27ct"]
+[ext_resource type="Theme" uid="uid://canmh3500dx24" path="res://themes/print.tres" id="1_u3bbh"]
+[ext_resource type="Texture2D" uid="uid://bgju0ryct5wgb" path="res://art/telegram.png" id="2_u3bbh"]
+[ext_resource type="Script" uid="uid://btmqie5jxc58v" path="res://scripts/documents/telegram.gd" id="3_u3bbh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r8a8a"]
+texture = ExtResource("2_u3bbh")
+
+[node name="Telegram" type="Panel" unique_id=1500786714]
+offset_right = 192.0
+offset_bottom = 128.0
+theme = ExtResource("1_a27ct")
+theme_override_styles/panel = SubResource("StyleBoxTexture_r8a8a")
+script = ExtResource("3_u3bbh")
+
+[node name="To" type="LineEdit" parent="." unique_id=217651719]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 43.0
+offset_right = 110.0
+offset_bottom = 59.0
+mouse_filter = 1
+alignment = 1
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Date" type="LineEdit" parent="." unique_id=398996871]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 44.0
+offset_right = 191.0
+offset_bottom = 60.0
+mouse_filter = 1
+theme = ExtResource("1_u3bbh")
+theme_override_colors/font_color = Color(0.68793875, 0.13226181, 0.19369772, 0.8627451)
+theme_override_colors/font_uneditable_color = Color(0.6862745, 0.13333334, 0.19215687, 0.8627451)
+theme_override_colors/caret_color = Color(0.6862745, 0.13333334, 0.19215687, 1)
+alignment = 1
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Body" type="TextEdit" parent="." unique_id=973700025]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 60.0
+offset_right = 190.0
+offset_bottom = 124.0
+mouse_filter = 1
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+middle_mouse_paste_enabled = false
+empty_selection_clipboard_enabled = false
+wrap_mode = 1
+autowrap_mode = 2
