@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://dodr3xm28uy2x" path="res://icon.svg" id="1_ep8l3"]
 [ext_resource type="Script" uid="uid://omd48a3o3ann" path="res://scripts/desk.gd" id="1_se7ci"]
 [ext_resource type="Texture2D" uid="uid://dfm7exiyw4iie" path="res://art/desk.png" id="1_t5y75"]
+[ext_resource type="AudioStream" uid="uid://b2jy3oy8fyns5" path="res://resources/audio/ScaryMusic.wav" id="4_lrwc4"]
+[ext_resource type="Script" uid="uid://g0l5b5q0a4k2" path="res://scripts/musicPlayer.gd" id="4_tm3w8"]
+[ext_resource type="AudioStream" uid="uid://c0l6xg6xhw71r" path="res://resources/audio/writingSounds.wav" id="5_r8wvv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u04nx"]
 texture = ExtResource("1_t5y75")
@@ -111,3 +114,17 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_n28y6")
 [node name="RightSpacer" type="Control" parent="Desk/DeskDrawer" unique_id=696296939]
 custom_minimum_size = Vector2(16, 0)
 layout_mode = 2
+
+[node name="AudioStreamPlayerSFX" type="AudioStreamPlayer" parent="." unique_id=1205999716]
+
+[node name="AudioStreamPlayerMusic" type="AudioStreamPlayer" parent="." unique_id=333677594]
+stream = ExtResource("4_lrwc4")
+volume_db = -18.0
+script = ExtResource("4_tm3w8")
+
+[node name="AudioStreamPlayerWriting" type="AudioStreamPlayer" parent="." unique_id=1094335158]
+stream = ExtResource("5_r8wvv")
+volume_db = 18.0
+
+[node name="AudioStreamPlayerSFX2" type="AudioStreamPlayer" parent="." unique_id=219056171]
+volume_db = -12.0
