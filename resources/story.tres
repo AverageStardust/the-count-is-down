@@ -14,5 +14,6 @@ text = Dictionary[int, PackedStringArray]({
 6: PackedStringArray("J. Harker", "W. Denson"),
 7: PackedStringArray("16MAY1893"),
 8: PackedStringArray("Come back to my castle, I swear my wives won\'t attack you again. -Dracula", "One of those boxes is making sounds that dirt should not be making. -David Larkin.", "I am growing increasingly certain there is a man in that box. -David Larkin")
+9: PackedStringArray("Dracula Gone At Last|Sightings of Dracula in Transylvania have been on the decline. In other news, sheep populations in the area are at historic highs.", "Dracula Disappeared|Sightings of Dracula in Transylvania have been on the decline. In other news, sheep populations in the area are at historic highs.")
 })
 metadata/_custom_type_script = "uid://b2aeo60ghf1tl"
