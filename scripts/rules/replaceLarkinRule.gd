@@ -2,7 +2,7 @@ extends GraderRule
 class_name ReplaceLarkinRule
 
 func get_advice() -> String:
-	return "That info was supposed to seem unreliable. Address it from \"P Walter\""
+	return "We wanted that info to seem unreliable. Address it from \"P Walter\" instead"
 
 func find_edits(field: DocumentField) -> Array[RuleEdit]:
 	var edits: Array[RuleEdit] = []

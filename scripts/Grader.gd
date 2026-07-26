@@ -1,6 +1,6 @@
 extends Node
 
-var rules: Array[GraderRule] = [ReplaceDraculaRule.new()]
+var rules: Array[GraderRule] = [ReplaceDraculaRule.new(), ReplaceLarkinRule.new(), ReplaceGaveRule.new()]
 
 var lev_mat = []
 var m
@@ -31,11 +31,11 @@ func get_advice(original: Array[DocumentField], forgery: Array[DocumentField]) -
 			if rule_score > worst_rule_score:
 				worst_rule_score = rule_score
 				worst_rule = rule
-	
+	print(worst_accuracy_score, ", ", worst_rule_score)
 	if worst_accuracy_score > 0.35 or worst_rule_score > 0.35:
 		if worst_length_score > 0.2:
 			return "You missed copying something, the last forgery looks too empty."
-		elif worst_rule_score > worst_accuracy_score + 0.1:
+		elif worst_rule_score > worst_accuracy_score + 0.05:
 			return worst_rule.get_advice()
 		else:
 			return "You made unnecessary changes, the last forgery looks fake."
