@@ -32,7 +32,7 @@ func get_advice(original: Array[DocumentField], forgery: Array[DocumentField]) -
 				worst_rule_score = rule_score
 				worst_rule = rule
 	
-	if worst_accuracy_score > 0.35:
+	if worst_accuracy_score > 0.35 or worst_rule_score > 0.35:
 		if worst_length_score > 0.2:
 			return "You missed copying something, the last forgery looks too empty."
 		elif worst_rule_score > worst_accuracy_score + 0.1:
