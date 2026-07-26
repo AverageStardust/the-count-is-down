@@ -1,7 +1,8 @@
 extends Control
 
 const START_LETTER = "The start"
-const END_LETTER = "The end"
+const SUCCESS_LETTER = "The end :)"
+const FAIL_LETTER = "    My dearest Marishka, \nDracula has been found and killed. I far we are next. Run and hide, or they'll find you."
 const LETTER_SCENE_POSITION = 340
 const SCENE_SWITCH_RANGE = 12
 
@@ -130,7 +131,8 @@ func transition_to_criticism(advice: String):
 	transition_to_forging()
 
 func transition_to_end():
-	deliver_letter(END_LETTER)
+	if Grader.get_fail_ratio() < 0.5: deliver_letter(SUCCESS_LETTER)
+	else : deliver_letter(FAIL_LETTER)
 	
 	state = State.REACHED_ENDING
 	
