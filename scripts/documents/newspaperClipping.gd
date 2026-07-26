@@ -6,15 +6,19 @@ class_name NewspaperClipping
 @onready var body: TextEdit = $Body
 	
 func write_content():
-	title.text = Writer.random_content(DocumentField.FieldType.NEWSPAPER_TITLE)
+	var title_and_body = Writer.random_content(DocumentField.FieldType.NEWSPAPER_TITLE_AND_BODY)
+	title_and_body = title_and_body.split("|")
+	title.text = title_and_body[0]
+	body.text = title_and_body[1]
+	
 	publisher.text = Writer.random_content(DocumentField.FieldType.NEWSPAPER_PUBLISHER)
-	body.text = Writer.random_content(DocumentField.FieldType.NEWSPAPER_BODY)
 
 func get_fields() -> Array[DocumentField]:
 	return [
 		DocumentField.new(title.text, DocumentField.FieldType.NEWSPAPER_TITLE),
 		DocumentField.new(publisher.text, DocumentField.FieldType.NEWSPAPER_PUBLISHER),
-		DocumentField.new(body.text, DocumentField.FieldType.NEWSPAPER_BODY)]
+		DocumentField.new(body.text, DocumentField.FieldType.NEWSPAPER_BODY),
+	]
 
 func set_editable(_editable: bool) -> void:
 	if not is_node_ready():
