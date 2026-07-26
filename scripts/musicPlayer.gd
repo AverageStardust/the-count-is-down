@@ -21,4 +21,5 @@ func _fade(delta, goal):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if audio_player.is_playing() == false:
+		audio_player.play()
