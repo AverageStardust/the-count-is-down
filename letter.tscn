@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://r4xd2uhinw00"]
+
+[ext_resource type="Theme" uid="uid://ct0r2o3h378ai" path="res://themes/handwriting.tres" id="1_57kop"]
+[ext_resource type="Texture2D" uid="uid://cisrlg4awo4qh" path="res://art/letter.png" id="2_kv2n4"]
+[ext_resource type="Script" uid="uid://b76di4hmogq4g" path="res://scripts/letter.gd" id="3_57kop"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r8a8a"]
+texture = ExtResource("2_kv2n4")
+
+[node name="Letter" type="Panel" unique_id=1500786714]
+offset_right = 160.0
+offset_bottom = 204.0
+theme = ExtResource("1_57kop")
+theme_override_styles/panel = SubResource("StyleBoxTexture_r8a8a")
+script = ExtResource("3_57kop")
+
+[node name="Body" type="RichTextLabel" parent="." unique_id=1039581299]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 11.0
+offset_right = 156.0
+offset_bottom = 203.0
+mouse_filter = 1
+autowrap_mode = 2
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false

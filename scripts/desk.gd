@@ -1,5 +1,7 @@
 extends Control
 
+const START_LETTER = "The start"
+const END_LETTER = "The end"
 const LETTER_SCENE_POSITION = 340
 const SCENE_SWITCH_RANGE = 12
 
@@ -10,6 +12,12 @@ var TELEGRAM = preload("res://documents/telegram.tscn")
 @onready var originalSlot: Control = $Desk/DeskTop/OriginalSlot
 @onready var forgerySlot: Control = $Desk/DeskTop/ForgerySlot
 @onready var watch: Watch = $Desk/DeskTop/LeftSpacer/Watch
+@onready var undeilvered_letters: Array[Letter] = [
+	$Desk/DeskDrawer/Letters/Letter,
+	$Desk/DeskDrawer/Letters/Letter2,
+	$Desk/DeskDrawer/Letters/Letter3,
+	$Desk/DeskDrawer/Letters/Letter4
+]
 
 enum State {
 	READING_LETTERS,
@@ -21,7 +29,8 @@ enum State {
 var state: State = State.READING_LETTERS
 var open_documents = []
 var on_letters_screen: bool = true
-var switch_screen_cooldown: float = 0.2
+var switch_screen_cooldown: float = 2.0
+var on_switch_area = false
 
 func _ready() -> void:
 	await get_tree().process_frame
@@ -30,6 +39,8 @@ func _ready() -> void:
 		position.y = -LETTER_SCENE_POSITION
 	else:
 		position.y = 0
+	
+	deliver_letter(START_LETTER)
 
 func _process(delta: float) -> void:
 	var target_y: float = 0
@@ -39,7 +50,8 @@ func _process(delta: float) -> void:
 	position.y = lerp(position.y, target_y, delta * 3.0)
 	position.y = move_toward(position.y, target_y, delta * 45.0)
 	
-	switch_screen_cooldown = max(0, switch_screen_cooldown - delta)
+	if !on_switch_area or switch_screen_cooldown > 0.8:
+		switch_screen_cooldown = max(0, switch_screen_cooldown - delta)
 	
 	match state:
 		State.READING_LETTERS:
@@ -57,12 +69,14 @@ func _input(event: InputEvent) -> void:
 			if switch_screen_cooldown <= 0:
 				on_letters_screen = false
 			
-			switch_screen_cooldown = 0.05
+			on_switch_area = true
 		elif event.position.y > window_height - SCENE_SWITCH_RANGE:
 			if switch_screen_cooldown <= 0:
 				on_letters_screen = true
 			
-			switch_screen_cooldown = 0.05
+			on_switch_area = true
+		else:
+			on_switch_area = false
 
 func transition_to_forging():
 	var document_type: PackedScene = next_document_type()
@@ -116,6 +130,8 @@ func transition_to_criticism(advice: String):
 	transition_to_forging()
 
 func transition_to_end():
+	deliver_letter(END_LETTER)
+	
 	state = State.REACHED_ENDING
 	
 	for document in open_documents:
@@ -125,6 +141,10 @@ func transition_to_end():
 	
 	on_letters_screen = true
 	switch_screen_cooldown = INF
+
+func deliver_letter(message: String):
+	var letter = undeilvered_letters.pop_front()
+	letter.deliver(message)
 
 func next_document_type() -> PackedScene:
 	match randi_range(0, 2):
