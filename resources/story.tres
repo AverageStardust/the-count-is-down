@@ -5,13 +5,15 @@
 [resource]
 script = ExtResource("1_o11yq")
 text = Dictionary[int, PackedStringArray]({
-1: PackedStringArray("Transylvania Times"),
+0: PackedStringArray(),
+1: PackedStringArray("Transylvania Times", "Manchester Guardian"),
+2: PackedStringArray(),
 3: PackedStringArray("Grave dirt"),
 4: PackedStringArray("207 Strada Liliecilor, Bran, Romania"),
 5: PackedStringArray("109 Dartmouth Road, London, UK"),
-6: PackedStringArray("J. Harker"),
+6: PackedStringArray("J. Harker", "W. Denson"),
 7: PackedStringArray("16MAY1893"),
-8: PackedStringArray("Come back to my castle, I swear my wives won\'t attack you again. -Dracula"),
-9: PackedStringArray("Dracula Gone At Last|Sightings of Dracula in Transylvania have been on the decline. In other news, sheep populations in the area are at historic highs.", "Dracula Disappeared|Sightings of Dracula in Transylvania have been on the decline. In other news, sheep populations in the area are at historic highs.")
+8: PackedStringArray("Come back to my castle, I swear my wives won\'t attack you again. -Dracula", "One of those boxes is making sounds that dirt should not be making. -M Larkin", "I am growing increasingly certain there is a person in that box. -M Larkin"),
+9: PackedStringArray("Dracula Gone At Last|Sightings of Dracula in Transylvania have been on the decline. In other news, sheep populations in the area are at historic highs.", "Dracula Disappeared|Sightings of Dracula in Transylvania have been on the decline. In other news, sheep populations in the area are at historic highs.", "Blood-Sucking Bats|London seems to have attracted another invasion, one of blood-sucking bats. There have been many eyewitness accounts of bats with blood dripping from their fangs.", "Dracula Still Alive?|Despite Dracula\'s apparent disappearance, without evidence of a corpse, many claim that they can\'t yet relax. The lack of knowledge of his whereabouts may prove the threat to be greater instead.", "Dangers of Dracula|Although Dracula seems to have vanished, the family of his last victim urges continued caution. \"Don\'t lt your guard down, or Dracula will take you next!\"")
 })
 metadata/_custom_type_script = "uid://b2aeo60ghf1tl"
