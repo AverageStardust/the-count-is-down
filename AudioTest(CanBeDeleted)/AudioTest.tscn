@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bufmbjwhxg8gv"]
+
+[ext_resource type="Script" uid="uid://je1ir2ewevh1" path="res://AudioTest(CanBeDeleted)/audio_test.gd" id="1_a73i1"]
+[ext_resource type="AudioStream" uid="uid://bch64a7h8h1lv" path="res://resources/audio/StepWet1.wav" id="2_a73i1"]
+
+[node name="Node2D" type="Node2D" unique_id=388263137]
+script = ExtResource("1_a73i1")
+
+[node name="Label" type="Label" parent="." unique_id=1646841367]
+offset_left = 183.0
+offset_top = 106.0
+offset_right = 337.0
+offset_bottom = 129.0
+text = "Original Documents"
+
+[node name="Label2" type="Label" parent="." unique_id=368657203]
+offset_left = 834.0
+offset_top = 108.0
+offset_right = 963.0
+offset_bottom = 131.0
+text = "Your Documents"
+horizontal_alignment = 2
+
+[node name="Button" type="Button" parent="." unique_id=1033621388]
+offset_left = 55.0
+offset_top = 41.0
+offset_right = 164.0
+offset_bottom = 72.0
+text = "Open Letters"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Button" unique_id=627973013]
+stream = ExtResource("2_a73i1")
+
+[node name="Button2" type="Button" parent="." unique_id=1438512408]
+offset_left = 853.0
+offset_top = 43.0
+offset_right = 940.0
+offset_bottom = 74.0
+text = "Seal letter"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Button2" unique_id=402454560]
+stream = ExtResource("2_a73i1")
