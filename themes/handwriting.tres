@@ -2,6 +2,13 @@
 
 [ext_resource type="FontFile" uid="uid://bse4im0wxolfc" path="res://art/vanHelsing.ttf" id="1_n6cft"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pgd1"]
+bg_color = Color(0, 0, 0, 0.047058824)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x4bp3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3ytef"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tfap"]
 bg_color = Color(0, 0, 0, 0.047058824)
 
@@ -12,6 +19,14 @@ bg_color = Color(0, 0, 0, 0.047058824)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oxcfv"]
 
 [resource]
+LineEdit/colors/caret_color = Color(0.15294118, 0.14901961, 0.21960784, 1)
+LineEdit/colors/font_color = Color(0.15294118, 0.14901961, 0.21960784, 0.8627451)
+LineEdit/colors/font_uneditable_color = Color(0.15294118, 0.14901961, 0.21960784, 0.8627451)
+LineEdit/font_sizes/font_size = 15
+LineEdit/fonts/font = ExtResource("1_n6cft")
+LineEdit/styles/focus = SubResource("StyleBoxFlat_2pgd1")
+LineEdit/styles/normal = SubResource("StyleBoxEmpty_x4bp3")
+LineEdit/styles/read_only = SubResource("StyleBoxEmpty_3ytef")
 TextEdit/colors/background_color = Color(0, 0, 0, 0)
 TextEdit/colors/caret_color = Color(0.15294118, 0.14901961, 0.21960784, 1)
 TextEdit/colors/font_color = Color(0.15294118, 0.14901961, 0.21960784, 0.8627451)

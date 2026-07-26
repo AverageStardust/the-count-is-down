@@ -1,9 +1,11 @@
+@abstract
 extends Panel
 class_name Document
 
 signal discarded
 
 @export var editable = true: set = set_editable
+@export var draggable = true
 
 var velocity: Vector2
 var origin_position: Vector2
@@ -45,7 +47,7 @@ func move_to_edge(delta: float):
 	position = position.lerp(position * 2 - origin_position, delta * 2.5)
 
 func _gui_input(event):
-	if editable && event is InputEventMouseMotion:
+	if draggable && event is InputEventMouseMotion:
 		if event.button_mask & 1:
 			position += event.relative
 			accept_event()
@@ -53,11 +55,11 @@ func _gui_input(event):
 func discard():
 	velocity = Vector2.from_angle(randf_range(-PI * 0.25, -PI * 0.75)) * 600
 
-func write_content() -> void:
-	pass # abstract
+@abstract
+func write_content() -> void
+	
+@abstract
+func get_fields() -> Array[DocumentField]
 
-func get_fields() -> Array[DocumentField]:
-	return [] # abstract
-
-func set_editable(set_editable: bool) -> void:
-	pass # abstract
+@abstract
+func set_editable(_editable: bool) -> void
