@@ -3,7 +3,7 @@ extends Control
 
 #const START_LETTER = "The start"
 #const SUCCESS_LETTER = "The end :)"
-const FAIL_LETTER = "    My dearest Marishka, \nDracula has been found and killed. I far we are next. Run and hide, or they'll find you."
+const FAIL_LETTER = "    Dearest Marishka, \nThe Count is down. Dracula has been found and killed. I far we are next. Run and hide, or they'll find you."
 
 const START_LETTER = "    Dear Marishka,\nOur beloved Count has begun expanding towards England. He left a paper trail that must be covered. Aleera and I will sent them and you must correct them. Dracula is Hank, Grave Dirt is Specialty Dirt, and M. Larkin is P. Walter.\nCold Regards, Verona"
 const GOOD_END_LETTER = "     Marvelous Marishka, Your work never ceases to impress. The Count has secured his new territory in England. Return to us safe and sound, my love.\nOurs truly, Verona"
