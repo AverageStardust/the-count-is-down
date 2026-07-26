@@ -22,9 +22,9 @@ func write_message(_to: String, message: String):
 
 func get_fields() -> Array[DocumentField]:
 	return [
-		DocumentField.new(to.text, DocumentField.FieldType.NEWSPAPER_TITLE),
-		DocumentField.new(date.text, DocumentField.FieldType.NEWSPAPER_PUBLISHER),
-		DocumentField.new(body.text, DocumentField.FieldType.NEWSPAPER_BODY)]
+		DocumentField.new(to.text, DocumentField.FieldType.TELEGRAM_TO),
+		DocumentField.new(date.text, DocumentField.FieldType.TELEGRAM_DATE),
+		DocumentField.new(body.text, DocumentField.FieldType.TELEGRAM_BODY)]
 
 func set_editable(_editable: bool) -> void:
 	if not is_node_ready():

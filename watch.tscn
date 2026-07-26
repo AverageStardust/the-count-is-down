@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b0nlbd703kn6l"]
+
+[ext_resource type="Texture2D" uid="uid://dco58gdkxom34" path="res://art/watch.png" id="1_e77nl"]
+[ext_resource type="Script" uid="uid://0mc6rxxhctt1" path="res://scripts/watch.gd" id="2_knfb5"]
+[ext_resource type="Texture2D" uid="uid://64ga0wes02iy" path="res://art/watchHand.png" id="2_rsdfp"]
+
+[node name="Watch" type="Sprite2D" unique_id=661106865]
+texture = ExtResource("1_e77nl")
+script = ExtResource("2_knfb5")
+
+[node name="WatchHand" type="Sprite2D" parent="." unique_id=1756042144]
+position = Vector2(-2, 3)
+texture = ExtResource("2_rsdfp")
+offset = Vector2(0, -8)
