@@ -1,10 +1,12 @@
 extends Node
 
-var rules: Array[GraderRule] = [ReplaceDraculaRule.new()]
+var rules: Array[GraderRule] = [ReplaceDraculaRule.new(), ReplaceLarkinRule.new(), ReplaceGaveRule.new()]
 
 var lev_mat = []
 var m
 var n
+var num_failed : float = 0
+var num_completed : float = 0
 
 func get_advice(original: Array[DocumentField], forgery: Array[DocumentField]) -> String:
 	var worst_accuracy_score: float = 0
@@ -31,11 +33,12 @@ func get_advice(original: Array[DocumentField], forgery: Array[DocumentField]) -
 			if rule_score > worst_rule_score:
 				worst_rule_score = rule_score
 				worst_rule = rule
-	
+	num_completed += 1
 	if worst_accuracy_score > 0.35 or worst_rule_score > 0.35:
+		num_failed += 1
 		if worst_length_score > 0.2:
 			return "You missed copying something, the last forgery looks too empty."
-		elif worst_rule_score > worst_accuracy_score + 0.1:
+		elif worst_rule_score > worst_accuracy_score + 0.05:
 			return worst_rule.get_advice()
 		else:
 			return "You made unnecessary changes, the last forgery looks fake."
@@ -106,3 +109,7 @@ func rel_pos() -> Array[int]:
 	similar[n - 1] = similar[n - 2] + 1
 	
 	return similar
+	
+func get_fail_ratio() -> float:
+	return num_failed/num_completed
+	
