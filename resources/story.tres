@@ -5,14 +5,14 @@
 [resource]
 script = ExtResource("1_o11yq")
 text = Dictionary[int, PackedStringArray]({
-0: PackedStringArray("Dracula Gone At Last", "Dracula Disappeared"),
-1: PackedStringArray("Transylvania Times"),
-2: PackedStringArray("Sighting of Dracula in Transylvania have been on the decline. In other news, sheep polulations in the area are at historic highs."),
+0: PackedStringArray("Dracula Gone At Last", "Dracula Disappeared", "Blood-Sucking Bats", "Dracula Still Alive?"),
+1: PackedStringArray("Transylvania Times", "Manchester Guardian"),
+2: PackedStringArray("Sighting of Dracula in Transylvania have been on the decline. Citizens in the area report feeling relieved at his presumed disapperance. In other news, sheep polulations in the area are at historic highs.", "Today marks the end of the second week since Dracula has been spotted. Concerned citizens wonder, \"is he really gone? Can we relax once more, or is this a trick to lull us into a false sense of security?\"", "London seems to have attracted another invasion, one of blood-sucking bats. There have been many eyewitness accounts of bats with blood dripping from their fangs.", "Despite Dracula\'s apparent disappearance, without evidence of a corpse, many claim that they can\'t yet relax. The lack of knowledge of his whereabouts may prove the threat to be greater instead."),
 3: PackedStringArray("Grave dirt"),
 4: PackedStringArray("207 Strada Liliecilor, Bran, Romania"),
 5: PackedStringArray("109 Dartmouth Road, London, UK"),
-6: PackedStringArray("J. Harker"),
+6: PackedStringArray("J. Harker", "W. Denson"),
 7: PackedStringArray("16MAY1893"),
-8: PackedStringArray("Come back to my castle, I swear my wives won\'t attack you again. -Dracula")
+8: PackedStringArray("Come back to my castle, I swear my wives won\'t attack you again. -Dracula", "One of those boxes is making sounds that dirt should not be making. -David Larkin.", "I am growing increasingly certain there is a man in that box. -David Larkin")
 })
 metadata/_custom_type_script = "uid://b2aeo60ghf1tl"

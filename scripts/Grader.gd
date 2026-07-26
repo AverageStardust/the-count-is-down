@@ -82,7 +82,7 @@ func lev_dist(input: String, target: String) -> int:
 	return lev_mat[n*m-1]
 	
 ## uses existing levenshtein matrix to return an array of locations in one string relative to another.
-## e.g. arr[target index] = input index
+## e.g. arr[original index] = forgery index
 func rel_pos() -> Array[int]:
 	var j = m-1
 	var prev = lev_mat[n*m-1]+1
