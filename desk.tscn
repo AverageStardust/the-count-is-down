@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://g0l5b5q0a4k2" path="res://scripts/musicPlayer.gd" id="4_tm3w8"]
 [ext_resource type="PackedScene" uid="uid://r4xd2uhinw00" path="res://letter.tscn" id="4_yh53x"]
 [ext_resource type="AudioStream" uid="uid://c0l6xg6xhw71r" path="res://resources/audio/writingSounds.wav" id="5_r8wvv"]
+[ext_resource type="AudioStream" uid="uid://6q3qlyfeig3w" path="res://resources/audio/ThunderStorm.wav" id="8_7hob8"]
+[ext_resource type="Script" uid="uid://lncs8fchhmgv" path="res://storm.gd" id="9_hdap7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u04nx"]
 texture = ExtResource("1_t5y75")
@@ -121,3 +123,9 @@ volume_db = 18.0
 
 [node name="AudioStreamPlayerSFX2" type="AudioStreamPlayer" parent="." unique_id=219056171]
 volume_db = -12.0
+
+[node name="AudioStreamPlayerStorm" type="AudioStreamPlayer" parent="." unique_id=1341645557]
+stream = ExtResource("8_7hob8")
+volume_db = -18.0
+autoplay = true
+script = ExtResource("9_hdap7")

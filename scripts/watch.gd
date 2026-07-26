@@ -4,6 +4,7 @@ class_name Watch
 signal time_finished
 
 @onready var hand = $WatchHand
+@onready var watch_player = $"AudioStreamPlayer"
 
 var _is_set = false
 var _time_left = 0
@@ -11,9 +12,11 @@ var _total_time = 1
 
 func _process(delta: float) -> void:
 	_time_left = max(0, _time_left - delta)
-	
+	if watch_player.is_playing() == false && _time_left != 0 && _is_set:
+		watch_player.play();
 	if _time_left == 0 && _is_set:
 		time_finished.emit()
+		watch_player.stream_paused = true
 		_is_set = false
 	
 	var target_rotation = get_target_rotation()
