@@ -10,6 +10,9 @@ text = Dictionary[int, PackedStringArray]({
 2: PackedStringArray("Sighting of Dracula in Transylvania have been on the decline. In other news, sheep polulations in the area are at historic highs."),
 3: PackedStringArray("Grave dirt"),
 4: PackedStringArray("207 Strada Liliecilor, Bran, Romania"),
-5: PackedStringArray("109 Dartmouth Road, London, UK")
+5: PackedStringArray("109 Dartmouth Road, London, UK"),
+6: PackedStringArray("J. Harker"),
+7: PackedStringArray("16MAY1893"),
+8: PackedStringArray("Come back to my castle, I swear my wives won\'t attack you again. -Dracula")
 })
 metadata/_custom_type_script = "uid://b2aeo60ghf1tl"

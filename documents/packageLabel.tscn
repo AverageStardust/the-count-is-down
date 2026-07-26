@@ -2,15 +2,14 @@
 
 [ext_resource type="Theme" uid="uid://ct0r2o3h378ai" path="res://themes/handwriting.tres" id="1_6k7at"]
 [ext_resource type="Texture2D" uid="uid://dll1bsqe7er1s" path="res://art/packageLabel.png" id="2_6k7at"]
-[ext_resource type="Script" uid="uid://dbm5ar3okh3r0" path="res://scripts/packageLabel.gd" id="3_6k7at"]
+[ext_resource type="Script" uid="uid://dbm5ar3okh3r0" path="res://scripts/documents/packageLabel.gd" id="3_6k7at"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r8a8a"]
 texture = ExtResource("2_6k7at")
 
 [node name="PackageLabel" type="Panel" unique_id=1500786714]
-custom_minimum_size = Vector2(256, 192)
 offset_right = 256.0
-offset_bottom = 160.0
+offset_bottom = 192.0
 theme = ExtResource("1_6k7at")
 theme_override_styles/panel = SubResource("StyleBoxTexture_r8a8a")
 script = ExtResource("3_6k7at")

@@ -7,12 +7,15 @@ enum FieldType {
 	NEWSPAPER_BODY,
 	PACKAGE_CONTENTS,
 	TRANSYLVANIA_ADDRESS,
-	ENGLAND_ADDRESS
+	ENGLAND_ADDRESS,
+	TELEGRAM_TO,
+	TELEGRAM_DATE,
+	TELEGRAM_BODY
 }
 
-var content: String
+var text: String
 var type: FieldType
 
 func _init(_content: String, _type: FieldType) -> void:
-	content = _content
+	text = _content
 	type = _type
